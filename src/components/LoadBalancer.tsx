@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { CircleCheck, AlertCircle, Server as ServerIcon, Share2, Clock, Eye, Activity, Lock } from 'lucide-react';
+import { CircleCheck, Server as ServerIcon, Share2, Clock, Eye, Activity, Lock } from 'lucide-react';
 
 // Patrón Singleton para el LoadBalancer
 class LoadBalancerSingleton {
