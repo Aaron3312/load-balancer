@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   eslint: {
     // Desactivar la comprobación de ESLint durante el build
     ignoreDuringBuilds: true,
@@ -12,4 +11,4 @@ const nextConfig: NextConfig = {
   output: 'export', // Necesario para GitHub Pages
 };
 
-export default nextConfig;
+module.exports = nextConfig;
