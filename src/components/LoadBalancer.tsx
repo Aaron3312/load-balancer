@@ -225,46 +225,48 @@ const LoadBalancerSystem = () => {
       <h1 className="text-2xl font-bold mb-4 text-gray-900">Sistema de Load Balancer</h1>
       
       <div className="flex flex-col md:flex-row gap-4 mb-4">
-        <div className="flex-1 bg-white p-4 rounded shadow">
-          <h2 className="text-lg font-semibold mb-2 flex items-center">
-            <Activity className="mr-2" size={20} />
+        {/* Panel de Patrones Implementados - Fondo oscuro con texto claro para mejor contraste */}
+        <div className="flex-1 bg-gray-800 p-4 rounded shadow">
+          <h2 className="text-lg font-semibold mb-2 flex items-center text-white">
+            <Activity className="mr-2 text-blue-400" size={20} />
             Patrones Implementados
           </h2>
           <ul className="space-y-2">
             <li className="flex items-center">
-              <CircleCheck className="text-green-500 mr-2" size={16} />
-              <span className="font-medium">Singleton:</span>
-                              <span className="ml-1 text-gray-800">Instancia única del Load Balancer</span>
+              <CircleCheck className="text-green-400 mr-2" size={16} />
+              <span className="font-medium text-white">Singleton:</span>
+              <span className="ml-1 text-gray-200">Instancia única del Load Balancer</span>
             </li>
             <li className="flex items-center">
-              <CircleCheck className="text-green-500 mr-2" size={16} />
-              <span className="font-medium">Observer:</span>
-                              <span className="ml-1 text-gray-800">Notificación de distribución de solicitudes</span>
+              <CircleCheck className="text-green-400 mr-2" size={16} />
+              <span className="font-medium text-white">Observer:</span>
+              <span className="ml-1 text-gray-200">Notificación de distribución de solicitudes</span>
             </li>
             <li className="flex items-center">
-              <CircleCheck className="text-green-500 mr-2" size={16} />
-              <span className="font-medium">Chain of Responsibility:</span>
-                              <span className="ml-1 text-gray-800">Procesamiento secuencial de solicitudes</span>
+              <CircleCheck className="text-green-400 mr-2" size={16} />
+              <span className="font-medium text-white">Chain of Responsibility:</span>
+              <span className="ml-1 text-gray-200">Procesamiento secuencial de solicitudes</span>
             </li>
             <li className="flex items-center">
-              <CircleCheck className="text-green-500 mr-2" size={16} />
-              <span className="font-medium">Round Robin:</span>
-                              <span className="ml-1 text-gray-800">Algoritmo de distribución equilibrada</span>
+              <CircleCheck className="text-green-400 mr-2" size={16} />
+              <span className="font-medium text-white">Round Robin:</span>
+              <span className="ml-1 text-gray-200">Algoritmo de distribución equilibrada</span>
             </li>
           </ul>
         </div>
         
-        <div className="flex-1 bg-white p-4 rounded shadow">
-          <h2 className="text-lg font-semibold mb-2 flex items-center">
-            <ServerIcon className="mr-2" size={20} />
+        {/* Panel de Servidores Activos - Mejorado contraste */}
+        <div className="flex-1 bg-blue-900 p-4 rounded shadow">
+          <h2 className="text-lg font-semibold mb-2 flex items-center text-white">
+            <ServerIcon className="mr-2 text-blue-300" size={20} />
             Servidores Activos
           </h2>
           <div className="grid grid-cols-2 gap-2">
             {servers.map((server) => (
-              <div key={server.id} className="border rounded p-2 flex items-center">
-                <ServerIcon className="text-blue-500 mr-2" size={16} />
-                <span>{server.id}</span>
-                <span className="ml-auto text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">{server.status}</span>
+              <div key={server.id} className="border border-blue-700 rounded p-2 flex items-center bg-blue-800">
+                <ServerIcon className="text-blue-300 mr-2" size={16} />
+                <span className="text-white font-medium">{server.id}</span>
+                <span className="ml-auto text-xs bg-green-700 text-green-100 px-2 py-1 rounded-full">{server.status}</span>
               </div>
             ))}
           </div>
@@ -272,72 +274,74 @@ const LoadBalancerSystem = () => {
       </div>
       
       <div className="flex flex-col md:flex-row gap-4">
-        <div className="flex-1 bg-white p-4 rounded shadow">
+        {/* Panel de Simulación de Tráfico - Mejorado contraste */}
+        <div className="flex-1 bg-gray-800 p-4 rounded shadow">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-semibold flex items-center">
-              <Share2 className="mr-2" size={20} />
+            <h2 className="text-lg font-semibold flex items-center text-white">
+              <Share2 className="mr-2 text-blue-400" size={20} />
               Simular Tráfico
             </h2>
             <button 
               onClick={generateRequest}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
             >
               Generar Solicitud
             </button>
           </div>
           
-          <h3 className="font-medium text-sm text-gray-700 mb-2">Cadena de Procesamiento:</h3>
+          <h3 className="font-medium text-sm text-gray-200 mb-2">Cadena de Procesamiento:</h3>
           <div className="flex items-center justify-between mb-4 text-sm">
             <div className="flex flex-col items-center">
-              <Lock className="text-purple-500 mb-1" size={20} />
-              <span>Autenticación</span>
+              <Lock className="text-purple-400 mb-1" size={20} />
+              <span className="text-white">Autenticación</span>
             </div>
-            <div className="h-0.5 w-full max-w-16 bg-gray-300"></div>
+            <div className="h-0.5 w-full max-w-16 bg-gray-500"></div>
             <div className="flex flex-col items-center">
-              <Clock className="text-blue-500 mb-1" size={20} />
-              <span>Logging</span>
+              <Clock className="text-blue-400 mb-1" size={20} />
+              <span className="text-white">Logging</span>
             </div>
-            <div className="h-0.5 w-full max-w-16 bg-gray-300"></div>
+            <div className="h-0.5 w-full max-w-16 bg-gray-500"></div>
             <div className="flex flex-col items-center">
-              <Eye className="text-green-500 mb-1" size={20} />
-              <span>Validación</span>
+              <Eye className="text-green-400 mb-1" size={20} />
+              <span className="text-white">Validación</span>
             </div>
           </div>
           
-          <h3 className="font-medium mb-2">Solicitudes Recientes:</h3>
-          <div className="max-h-48 overflow-y-auto border rounded">
+          <h3 className="font-medium mb-2 text-white">Solicitudes Recientes:</h3>
+          <div className="max-h-48 overflow-y-auto border border-gray-700 rounded">
             {processedRequests.length > 0 ? (
               <table className="min-w-full">
-                <thead className="bg-gray-50">
+                <thead className="bg-gray-700">
                   <tr>
-                    <th className="px-2 py-1 text-left text-xs font-medium text-gray-700">ID</th>
-                    <th className="px-2 py-1 text-left text-xs font-medium text-gray-700">Tipo</th>
-                    <th className="px-2 py-1 text-left text-xs font-medium text-gray-700">Ruta</th>
-                    <th className="px-2 py-1 text-left text-xs font-medium text-gray-700">Servidor</th>
+                    <th className="px-2 py-1 text-left text-xs font-medium text-gray-200">ID</th>
+                    <th className="px-2 py-1 text-left text-xs font-medium text-gray-200">Tipo</th>
+                    <th className="px-2 py-1 text-left text-xs font-medium text-gray-200">Ruta</th>
+                    <th className="px-2 py-1 text-left text-xs font-medium text-gray-200">Servidor</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200 bg-white">
+                <tbody className="divide-y divide-gray-600 bg-gray-800">
                   {processedRequests.slice().reverse().map((req, index) => (
                     <tr key={index}>
-                      <td className="px-2 py-1 text-xs text-gray-900">{req.request.id}</td>
-                      <td className="px-2 py-1 text-xs text-gray-900">{req.request.type}</td>
-                      <td className="px-2 py-1 text-xs text-gray-900">{req.request.path}</td>
-                      <td className="px-2 py-1 text-xs text-gray-900">{req.server}</td>
+                      <td className="px-2 py-1 text-xs text-gray-200">{req.request.id}</td>
+                      <td className="px-2 py-1 text-xs text-gray-200">{req.request.type}</td>
+                      <td className="px-2 py-1 text-xs text-gray-200">{req.request.path}</td>
+                      <td className="px-2 py-1 text-xs text-gray-200">{req.server}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             ) : (
-              <div className="p-4 text-center text-gray-500">
+              <div className="p-4 text-center text-gray-300 bg-gray-800">
                 No hay solicitudes procesadas. Genera una solicitud.
               </div>
             )}
           </div>
         </div>
         
-        <div className="flex-1 bg-white p-4 rounded shadow">
-          <h2 className="text-lg font-semibold mb-4 flex items-center">
-            <Activity className="mr-2" size={20} />
+        {/* Panel de Métricas - Mejorado contraste */}
+        <div className="flex-1 bg-blue-900 p-4 rounded shadow">
+          <h2 className="text-lg font-semibold mb-4 flex items-center text-white">
+            <Activity className="mr-2 text-blue-300" size={20} />
             Métricas de Distribución
           </h2>
           
@@ -351,12 +355,12 @@ const LoadBalancerSystem = () => {
                 return (
                   <div key={serverId} className="space-y-1">
                     <div className="flex justify-between text-sm">
-                      <span>{serverId}</span>
-                      <span>{count} solicitudes ({percentage}%)</span>
+                      <span className="text-white font-medium">{serverId}</span>
+                      <span className="text-gray-200">{count} solicitudes ({percentage}%)</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5">
+                    <div className="w-full bg-blue-800 rounded-full h-2.5">
                       <div 
-                        className="bg-blue-600 h-2.5 rounded-full" 
+                        className="bg-blue-400 h-2.5 rounded-full" 
                         style={{ width: `${percentage}%` }}
                       ></div>
                     </div>
@@ -365,7 +369,7 @@ const LoadBalancerSystem = () => {
               })}
             </div>
           ) : (
-            <div className="flex items-center justify-center h-40 text-gray-700">
+            <div className="flex items-center justify-center h-40 text-gray-200">
               <p>No hay datos de métricas disponibles</p>
             </div>
           )}
